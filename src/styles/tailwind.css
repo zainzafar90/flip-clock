@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --flip-height: 100px;
+  --flip-width: calc(var(--flip-height) * 0.6);
+  --line-height: calc(var(--flip-height) * 0.5);
+  --flip-container-color: #353531;
+  --flip-color: #353531;
+  --flip-text-color: #efefef;
+  --flip-border-radius: calc(var(--flip-height) * 0.05);
+  --animation-time: 0.8s;
+  --animation-ease: linear;
+  --perspective: 400px;
+  --half-height: 0.72em;
+  --border-radius: 0.15em;
+}
+
+body {
+  scroll-behavior: smooth;
+  background-color: #ddd;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.flip-clock {
+  text-align: center;
+  perspective: var(--perspective);
+  margin: 1.5rem auto;
+}
+
+.flip-clock__piece {
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.card {
+  display: block;
+  position: relative;
+  padding-bottom: var(--half-height);
+  font-size: 10vw;
+  line-height: 0.95;
+}
+
+.card__top,
+.card__bottom,
+.card__back::before,
+.card__back::after {
+  display: block;
+  height: var(--half-height);
+  color: #ccc;
+  background: #222;
+  padding: 0.25em 0.25em;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  backface-visiblity: hidden;
+  transform-style: preserve-3d;
+  width: 1.8em;
+  transform: translateZ(0);
+}
+
+.card__bottom {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border-top: solid 1px #000;
+  background: #393939;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.card__bottom::after {
+  display: block;
+  margin-top: calc(var(--half-height) * -1);
+}
+
+.card__back::before,
+.card__bottom::after {
+  content: attr(data-value);
+}
+
+.card__back {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 0%;
+  pointer-events: none;
+}
+
+.card__back::before {
+  position: relative;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.flip .card__back::before {
+  animation: flipTop 0.3s cubic-bezier(0.37, 0.01, 0.94, 0.35);
+  animation-fill-mode: both;
+  transform-origin: center bottom;
+}
+
+.flip .card__back .card__bottom {
+  transform-origin: center top;
+  animation-fill-mode: both;
+  animation: flipBottom 0.6s cubic-bezier(0.15, 0.45, 0.28, 1);
+}
+
+@keyframes flipTop {
+  0% {
+    transform: rotateX(0deg);
+    z-index: 2;
+  }
+  0%,
+  99% {
+    opacity: 0.99;
+  }
+  100% {
+    transform: rotateX(-90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flipBottom {
+  0%,
+  50% {
+    z-index: -1;
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+  51% {
+    opacity: 0.99;
+  }
+  100% {
+    opacity: 0.99;
+    transform: rotateX(0deg);
+    z-index: 5;
+  }
+}
