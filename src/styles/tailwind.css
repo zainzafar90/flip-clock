@@ -18,9 +18,9 @@
 }
 
 body {
-  scroll-behavior: smooth;
+  overflow-y: hidden;
   background-color: #ddd;
-  height: 100vh;
+  max-height: 100vh;
   display: grid;
   place-content: center;
 }
