@@ -14,11 +14,9 @@ export default function Home() {
         <title>Flip World Clock</title>
         <meta name="description" content="Flip World Clock" />
       </Head>
-      <div className="pt-16 pb-12 sm:pb-4 lg:pt-12">
-        <Container>
-          <DynamicTimer />
-        </Container>
-      </div>
+      <Container>
+        <DynamicTimer />
+      </Container>
     </>
   )
 }

@@ -7,7 +7,7 @@ export const useTimer = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setTime(getTime())
-    }, 500)
+    }, 1000)
 
     return () => clearInterval(interval)
   }, [])

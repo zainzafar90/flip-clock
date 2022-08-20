@@ -3,41 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --flip-height: 100px;
-  --flip-width: calc(var(--flip-height) * 0.6);
-  --line-height: calc(var(--flip-height) * 0.5);
-  --flip-container-color: #353531;
-  --flip-color: #353531;
-  --flip-text-color: #efefef;
-  --flip-border-radius: calc(var(--flip-height) * 0.05);
-  --animation-time: 0.8s;
-  --animation-ease: linear;
-  --perspective: 400px;
+  --flip-color: #222;
+  --flip-text-color: #fff;
+  --flip-text-color-dark: #ccc;
+  --flip-container-color: #222;
   --half-height: 0.72em;
   --border-radius: 0.15em;
-}
-
-html,
-body {
-  overflow-y: hidden;
-  background-color: #ddd;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.flip-clock {
-  text-align: center;
-  perspective: var(--perspective);
-  margin: 1.5rem auto;
-}
-
-.flip-clock__piece {
-  display: inline-block;
-  margin: 0 8px;
 }
 
 .card {
@@ -54,8 +25,8 @@ body {
 .card__back::after {
   display: block;
   height: var(--half-height);
-  color: #ccc;
-  background: #222;
+  color: var(--flip-text-color-dark);
+  background: var(--flip-container-color);
   padding: 0.25em 0.25em;
   border-radius: var(--border-radius) var(--border-radius) 0 0;
   backface-visiblity: hidden;
@@ -65,7 +36,7 @@ body {
 }
 
 .card__bottom {
-  color: #fff;
+  color: var(--flip-text-color);
   position: absolute;
   top: 50%;
   left: 0;
