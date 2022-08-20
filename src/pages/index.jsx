@@ -1,9 +1,7 @@
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 
-import { Container } from '@/components/Container'
-
-const DynamicTimer = dynamic(() => import('../components/flip-clock/Timer'), {
+const DynamicTimer = dynamic(() => import('../components/timer'), {
   ssr: false,
 })
 
@@ -12,11 +10,9 @@ export default function Home() {
     <>
       <Head>
         <title>Flip World Clock</title>
-        <meta name="description" content="Flip World Clock" />
+        <meta name="description" content="Flip Clock" />
       </Head>
-      <Container>
-        <DynamicTimer />
-      </Container>
+      <DynamicTimer />
     </>
   )
 }

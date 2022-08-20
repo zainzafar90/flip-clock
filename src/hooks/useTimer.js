@@ -22,7 +22,6 @@ const getTime = () => {
   const seconds = ('00' + t.getSeconds()).slice(-2)
 
   return {
-    total: t,
     hours,
     minutes,
     seconds,
