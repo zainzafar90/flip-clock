@@ -9,10 +9,13 @@ const DynamicTimer = dynamic(() => import('../components/timer'), {
   ssr: false,
 })
 
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+
 export default function Home() {
+  const mode = useState(prefersDark ? 'dark' : 'light')
   const [themeIndex, setThemeIndex] = useState(0)
 
-  useTheme(themes[themeIndex])
+  useTheme(themes[themeIndex][mode])
 
   return (
     <>
