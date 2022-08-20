@@ -2,10 +2,7 @@ import { Head, Html, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
-    <Html
-      className="grid h-full w-full place-content-center overflow-hidden bg-white antialiased"
-      lang="en"
-    >
+    <Html lang="en">
       <Head>
         <link
           rel="preconnect"
@@ -17,7 +14,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body>
+      <body className="grid h-full w-full place-content-center overflow-hidden bg-primary bg-black/90 antialiased">
         <Main />
         <NextScript />
       </body>

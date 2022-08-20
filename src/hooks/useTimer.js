@@ -22,6 +22,7 @@ const getTime = () => {
   const seconds = ('00' + t.getSeconds()).slice(-2)
 
   return {
+    ampm: t.getHours() >= 12 ? 'PM' : 'AM',
     hours,
     minutes,
     seconds,

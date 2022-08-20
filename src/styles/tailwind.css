@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 :root {
+  --background: #000;
+
   --flip-color: #222;
   --flip-text-color: #fff;
   --flip-text-color-dark: #ccc;
@@ -15,7 +17,6 @@
   display: block;
   position: relative;
   padding-bottom: var(--half-height);
-  font-size: 10vw;
   line-height: 0.95;
 }
 
@@ -31,7 +32,7 @@
   border-radius: var(--border-radius) var(--border-radius) 0 0;
   backface-visiblity: hidden;
   transform-style: preserve-3d;
-  width: 1.8em;
+  width: 1.5em;
   transform: translateZ(0);
 }
 
