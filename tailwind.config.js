@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       colors: {
         primary: 'var(--background)',
+        foreground: 'var(--foreground)',
       },
       fontFamily: {
         sans: ['Teko', ...defaultTheme.fontFamily.sans],

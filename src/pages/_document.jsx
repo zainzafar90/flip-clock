@@ -14,7 +14,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body className="grid h-full w-full place-content-center overflow-hidden bg-primary bg-black/90 antialiased">
+      <body className="grid h-full w-full place-content-center overflow-x-hidden bg-primary antialiased">
         <Main />
         <NextScript />
       </body>

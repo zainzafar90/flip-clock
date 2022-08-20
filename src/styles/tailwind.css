@@ -3,21 +3,20 @@
 @tailwind utilities;
 
 :root {
-  --background: #000;
-
-  --flip-color: #222;
-  --flip-text-color: #fff;
-  --flip-text-color-dark: #ccc;
-  --flip-container-color: #222;
   --half-height: 0.72em;
-  --border-radius: 0.15em;
+  --border-radius: 2rem;
+
+  /* default scheme*/
+  --background: #000;
+  --foreground: #fff;
+  --flip: #101010;
 }
 
 .card {
   display: block;
   position: relative;
   padding-bottom: var(--half-height);
-  line-height: 0.95;
+  line-height: 1;
 }
 
 .card__top,
@@ -25,24 +24,23 @@
 .card__back::before,
 .card__back::after {
   display: block;
-  height: var(--half-height);
-  color: var(--flip-text-color-dark);
-  background: var(--flip-container-color);
+  background: var(--flip);
   padding: 0.25em 0.25em;
   border-radius: var(--border-radius) var(--border-radius) 0 0;
   backface-visiblity: hidden;
   transform-style: preserve-3d;
+  height: var(--half-height);
   width: 1.5em;
   transform: translateZ(0);
 }
 
 .card__bottom {
-  color: var(--flip-text-color);
   position: absolute;
   top: 50%;
   left: 0;
-  border-top: solid 1px #000;
-  background: #393939;
+  border-top: solid 2px var(--background);
+  background: var(--flip);
+  filter: brightness(95%);
   border-radius: 0 0 var(--border-radius) var(--border-radius);
   pointer-events: none;
   overflow: hidden;
