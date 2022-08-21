@@ -23,7 +23,7 @@ const getTime = () => {
 
   return {
     ampm: t.getHours() >= 12 ? 'PM' : 'AM',
-    hours,
+    hours: hours === '00' ? '12' : hours,
     minutes,
     seconds,
   }
