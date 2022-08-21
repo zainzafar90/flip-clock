@@ -4,7 +4,7 @@
 
 :root {
   --half-height: 0.72em;
-  --border-radius: 2rem;
+  --border-radius: 0.125em;
 
   /* default scheme*/
   --background: #000;
