@@ -4,12 +4,13 @@ import { FlipClockPiece } from './flip-clock-piece'
 
 const Timer = () => {
   const timer = useTimer()
+  const { hours, minutes, ampm } = timer
 
   return (
-    <div className="m-auto flex h-screen items-center text-center">
-      <FlipClockPiece interval={timer.hours} ampm={timer.ampm} />
-      <FlipClockPiece interval={timer.minutes} />
-      <FlipClockPiece interval={timer.seconds} />
+    <div className="flex h-screen items-center justify-center text-center">
+      <FlipClockPiece interval={hours} ampm={ampm} />
+      <FlipClockPiece interval={minutes} />
+      {/* <FlipClockPiece interval={seconds} /> */}
     </div>
   )
 }

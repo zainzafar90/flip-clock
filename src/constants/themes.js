@@ -1,15 +1,19 @@
+import { colorShade } from '@/utils/common'
+
 export const themes = [
   // Default
   {
     dark: {
       background: '#000',
-      foreground: '#fff',
-      flip: '#101010',
+      foreground: '#FFF',
+      flip: '#202020',
+      'flip-bottom': colorShade('#202020', -5),
     },
     light: {
-      background: '#fff',
+      background: '#FFF',
       foreground: '#000',
-      flip: '#efefef',
+      flip: '#EFEFEF',
+      'flip-bottom': colorShade('#EFEFEF', 5),
     },
   },
   // Green
@@ -17,12 +21,14 @@ export const themes = [
     dark: {
       background: '#0F140F',
       foreground: '#C4EBC1',
-      flip: '#1A1F1A',
+      flip: '#171C17',
+      'flip-bottom': colorShade('#171C17', -5),
     },
     light: {
       background: '#E8FFE8',
       foreground: '#546654',
-      flip: '#D6F5D6',
+      flip: colorShade('#C1f0C1', -5),
+      'flip-bottom': colorShade('#C1f0C1', -5),
     },
   },
   // Purple
@@ -31,11 +37,13 @@ export const themes = [
       background: '#131315',
       foreground: '#C5C8F8',
       flip: '#1B1C20',
+      'flip-bottom': colorShade('#1B1C20', -5),
     },
     light: {
       background: '#EFF2FF',
       foreground: '#222843',
-      flip: '#E4E7FE',
+      flip: colorShade('#E4E7FE', -5),
+      'flip-bottom': colorShade('#E4E7FE', -5),
     },
   },
   // Red
@@ -44,11 +52,13 @@ export const themes = [
       background: '#1B1616',
       foreground: '#EF6666',
       flip: '#271E1E',
+      'flip-bottom': colorShade('#271E1E', -5),
     },
     light: {
       background: '#FFF4F4',
       foreground: '#FF8F8F',
-      flip: '#FFEDED',
+      flip: colorShade('#FFEDED', -5),
+      'flip-bottom': colorShade('#FFEDED', -5),
     },
   },
   // Orange
@@ -57,11 +67,13 @@ export const themes = [
       background: '#16120B',
       foreground: '#FFAC45',
       flip: '#221E17',
+      'flip-bottom': colorShade('#221E17', -5),
     },
     light: {
       background: '#FFF7EC',
       foreground: '#FDC97B',
-      flip: '#FFEED6',
+      flip: colorShade('#FFEED6', -5),
+      'flip-bottom': colorShade('#FFEED6', -5),
     },
   },
 
@@ -71,11 +83,13 @@ export const themes = [
       background: '#0D0F11',
       foreground: '#FFD458',
       flip: '#14161A',
+      'flip-bottom': colorShade('#14161A', -5),
     },
     light: {
       background: '#FFFDF4',
       foreground: '#FFDB57',
-      flip: '#FFF8E1',
+      flip: colorShade('#FFF8E1', -5),
+      'flip-bottom': colorShade('#FFF8E1', -5),
     },
   },
 ]

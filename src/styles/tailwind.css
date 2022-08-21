@@ -10,6 +10,7 @@
   --background: #000;
   --foreground: #fff;
   --flip: #101010;
+  --flip-bottom: #121212;
 }
 
 .card {
@@ -25,12 +26,11 @@
 .card__back::after {
   display: block;
   background: var(--flip);
-  padding: 0.25em 0.25em;
+  padding: 0.25em 0.1725em;
   border-radius: var(--border-radius) var(--border-radius) 0 0;
   backface-visiblity: hidden;
   transform-style: preserve-3d;
   height: var(--half-height);
-  width: 1.5em;
   transform: translateZ(0);
 }
 
@@ -39,8 +39,7 @@
   top: 50%;
   left: 0;
   border-top: solid 2px var(--background);
-  background: var(--flip);
-  filter: brightness(95%);
+  background: var(--flip-bottom);
   border-radius: 0 0 var(--border-radius) var(--border-radius);
   pointer-events: none;
   overflow: hidden;

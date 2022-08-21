@@ -2,17 +2,16 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import { useState } from 'react'
 
-import { useTheme } from '@/hooks/useTheme'
 import { themes } from '@/constants/themes'
+import { useTheme } from '@/hooks/useTheme'
+import { useDarkMode } from '@/hooks/useDarkMode'
 
 const DynamicTimer = dynamic(() => import('../components/timer'), {
   ssr: false,
 })
 
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-
 export default function Home() {
-  const mode = useState(prefersDark ? 'dark' : 'light')
+  const mode = useDarkMode()
   const [themeIndex, setThemeIndex] = useState(0)
 
   useTheme(themes[themeIndex][mode])
@@ -24,17 +23,20 @@ export default function Home() {
         <meta name="description" content="Flip Clock" />
       </Head>
       <>
-        {themes.map((theme, i) => (
-          <label key={i}>
-            <input
-              type="radio"
-              name="theme"
-              value={i}
-              checked={themeIndex === i}
-              onChange={() => setThemeIndex(i)}
-            />
-          </label>
-        ))}
+        <div className="flex items-center space-x-4">
+          {themes.map((theme, i) => (
+            <label key={i} className=" text-white">
+              [theme {i}]
+              <input
+                type="radio"
+                name="theme"
+                value={i}
+                checked={themeIndex === i}
+                onChange={() => setThemeIndex(i)}
+              />
+            </label>
+          ))}
+        </div>
         <DynamicTimer />
       </>
     </>
