@@ -1,8 +1,7 @@
 import { colorShade } from '@/utils/common'
 
-export const themes = [
-  // Default
-  {
+export const themes = {
+  default: {
     dark: {
       background: '#000',
       foreground: '#FFF',
@@ -16,8 +15,7 @@ export const themes = [
       'flip-bottom': colorShade('#EFEFEF', 5),
     },
   },
-  // Green
-  {
+  green: {
     dark: {
       background: '#0F140F',
       foreground: '#C4EBC1',
@@ -31,8 +29,7 @@ export const themes = [
       'flip-bottom': colorShade('#C1f0C1', -5),
     },
   },
-  // Purple
-  {
+  purple: {
     dark: {
       background: '#131315',
       foreground: '#C5C8F8',
@@ -46,8 +43,7 @@ export const themes = [
       'flip-bottom': colorShade('#E4E7FE', -5),
     },
   },
-  // Red
-  {
+  red: {
     dark: {
       background: '#1B1616',
       foreground: '#EF6666',
@@ -61,8 +57,7 @@ export const themes = [
       'flip-bottom': colorShade('#FFEDED', -5),
     },
   },
-  // Orange
-  {
+  orange: {
     dark: {
       background: '#16120B',
       foreground: '#FFAC45',
@@ -76,9 +71,7 @@ export const themes = [
       'flip-bottom': colorShade('#FFEED6', -5),
     },
   },
-
-  // Yellow
-  {
+  yellow: {
     dark: {
       background: '#0D0F11',
       foreground: '#FFD458',
@@ -92,4 +85,4 @@ export const themes = [
       'flip-bottom': colorShade('#FFF8E1', -5),
     },
   },
-]
+}

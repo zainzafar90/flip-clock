@@ -13,6 +13,9 @@
   --flip-bottom: #121212;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 .card {
   display: block;
   position: relative;
@@ -32,13 +35,14 @@
   transform-style: preserve-3d;
   height: var(--half-height);
   transform: translateZ(0);
+  transition: all 0.3s ease-in;
 }
 
 .card__bottom {
   position: absolute;
   top: 50%;
   left: 0;
-  border-top: solid 2px var(--background);
+  border-top: solid 1px var(--background);
   background: var(--flip-bottom);
   border-radius: 0 0 var(--border-radius) var(--border-radius);
   pointer-events: none;

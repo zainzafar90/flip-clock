@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { themes } from '@/constants/themes'
 import { useTheme } from '@/hooks/useTheme'
 import { useDarkMode } from '@/hooks/useDarkMode'
+import { ThemeSwitch } from '@/components/theme-switch'
 
 const DynamicTimer = dynamic(() => import('../components/timer'), {
   ssr: false,
@@ -12,9 +13,9 @@ const DynamicTimer = dynamic(() => import('../components/timer'), {
 
 export default function Home() {
   const mode = useDarkMode()
-  const [themeIndex, setThemeIndex] = useState(0)
+  const [theme, setTheme] = useState('default')
 
-  useTheme(themes[themeIndex][mode])
+  useTheme(themes[theme][mode])
 
   return (
     <>
@@ -23,21 +24,8 @@ export default function Home() {
         <meta name="description" content="Flip Clock" />
       </Head>
       <>
-        <div className="flex items-center space-x-4">
-          {themes.map((theme, i) => (
-            <label key={i} className=" text-white">
-              [theme {i}]
-              <input
-                type="radio"
-                name="theme"
-                value={i}
-                checked={themeIndex === i}
-                onChange={() => setThemeIndex(i)}
-              />
-            </label>
-          ))}
-        </div>
         <DynamicTimer />
+        <ThemeSwitch selectedTheme={theme} onThemeSelect={(e) => setTheme(e)} />
       </>
     </>
   )
