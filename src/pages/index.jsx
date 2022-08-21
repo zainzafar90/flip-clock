@@ -12,7 +12,7 @@ const DynamicTimer = dynamic(() => import('../components/timer'), {
 })
 
 export default function Home() {
-  const mode = useDarkMode()
+  const [mode, setMode] = useDarkMode()
   const [theme, setTheme] = useState('default')
 
   useTheme(themes[theme][mode])
@@ -25,7 +25,12 @@ export default function Home() {
       </Head>
       <>
         <DynamicTimer />
-        <ThemeSwitch selectedTheme={theme} onThemeSelect={(e) => setTheme(e)} />
+        <ThemeSwitch
+          selectedTheme={theme}
+          selectedMode={mode}
+          onThemeSelect={(t) => setTheme(t)}
+          onModeSelect={(m) => setMode(m)}
+        />
       </>
     </>
   )

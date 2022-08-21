@@ -26,7 +26,7 @@ export const FlipClockPiece = ({ interval, ampm }) => {
           <b className="card__back" data-value={prevCount}>
             <b className="card__bottom" data-value={interval} />
           </b>
-          <span className="absolute bottom-4 left-8 text-xs text-foreground opacity-60 sm:text-xl md:text-2xl">
+          <span className="absolute bottom-4 left-8 text-xs text-foreground opacity-75 sm:text-xl md:text-2xl">
             {ampm}
           </span>
         </b>
