@@ -8,7 +8,7 @@ A project supports all timezone with flip clock animations built using [Tailwind
 
 ### Thumnails
 
-<img width="512" alt="GIF (Demo)" src="https://raw.githubusercontent.com/zainzafar90/flip-clock/main/public/flip-clock.gif" >
+<img width="100%" alt="GIF (Demo)" src="https://raw.githubusercontent.com/zainzafar90/flip-clock/main/public/flip-clock.gif" >
 
 <img width="1366" alt="Thumbnail" src="https://user-images.githubusercontent.com/9788221/185793379-68742da1-cc44-4837-add1-94e3a0c9374e.png">
 
