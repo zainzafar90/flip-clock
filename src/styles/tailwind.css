@@ -21,6 +21,7 @@ html {
   position: relative;
   padding-bottom: var(--half-height);
   line-height: 1;
+  width: 100%;
 }
 
 .card__top,
@@ -34,6 +35,7 @@ html {
   backface-visiblity: hidden;
   transform-style: preserve-3d;
   height: var(--half-height);
+  width: 100%;
   transform: translateZ(0);
   transition: all 0.3s ease-in;
 }
@@ -63,6 +65,7 @@ html {
   position: absolute;
   top: 0;
   height: 100%;
+  width: 100%;
   left: 0%;
   pointer-events: none;
 }
